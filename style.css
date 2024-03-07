@@ -75,7 +75,49 @@ a:hover {
     }
 }
 
+/*                            CONTEUDO MAIN                                 */
 
+.conteudo {
+    border-top: 0.4px #353432 solid;
+}
+
+
+
+.conteudoCategorias {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteudoCategoriasET {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.4px #353432 solid;
+}
+
+.botaoET {
+    width: 120px;
+    height: 60px;
+    border: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 100%;
+    background-color: #fff;
+}
+.botaoET:hover {
+    background: rgba(0, 0, 0, .2);
+}
+
+#menuItem {
+    width: auto;
+    height: 90px;
+}
+
+.conteudoCategoriasETMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
 
 
 
