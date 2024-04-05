@@ -4,6 +4,8 @@ body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;
     max-width: 99vw;
+    border-radius: 65px;
+    max-height: 90vh;
 }
 body{
     background-color: black;
