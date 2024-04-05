@@ -76,14 +76,18 @@
 
     <script>
         let burger = document.getElementById('burger'),
-            nav    = document.getElementById('main-nav'),
-            slowmo = document.getElementById('slowmo');
+            nav    = document.getElementById('main-nav');
+            body   = document.body; // Select the body element
+            
     
         burger.addEventListener('click', function(e){
             this.classList.toggle('is-open');
             nav.classList.toggle('is-open');
+            body.classList.toggle('no-scroll'); // Toggle the 'no-scroll' class
         });
-
+        
+        
+        
         
     </script>
 </body>
