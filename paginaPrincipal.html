@@ -36,7 +36,30 @@
             </li>
         </ul>
     </nav> 
-    <div class="Carrosel"><img src="imgs/winterIsComing.jpeg" alt=""></div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          
+          <img src="imgs/winterIsComing.jpeg" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="imgs/Logo-Plants.will.jpg" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="imgs/natureza.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
     <hr>
     <h2>Criadores Do Manual</h2>
     
@@ -85,10 +108,30 @@
             nav.classList.toggle('is-open');
             body.classList.toggle('no-scroll'); // Toggle the 'no-scroll' class
         });
-        
-        
-        
-        
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+
+        }       
     </script>
 </body>
 </html>
