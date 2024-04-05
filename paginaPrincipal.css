@@ -174,8 +174,7 @@ body{
 }
 .Carrosel{
     margin: auto;
-    max-width: 80vw;
-    max-height: 60vh;
+
     padding: 20px;
     min-width: 60vw;
     min-height: 40vh;
