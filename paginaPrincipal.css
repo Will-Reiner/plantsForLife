@@ -376,12 +376,12 @@ h2{
 
 
 #progress{
-    background-color: green;
+    
     position: fixed;
     bottom: 20px;
     right: 10px;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -390,8 +390,8 @@ h2{
 }
 #progress-value{
     display: block;
-    height: calc(100% - 15px);
-    width: calc(100% - 15px);
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
     background-color: white;
     border-radius: 50%;
     display: grid;
