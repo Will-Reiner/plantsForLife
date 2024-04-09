@@ -1,168 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual do Bonsai</title>
-    <link rel="stylesheet" href="principiosBonsai.css">
-    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body { margin: 0; }
+
+		#progress-container {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+			width: 100%; /* Update this line to 100% */
+			height: 55px;
+			border-radius: 100%;
+			overflow: hidden; /* Add this line to hide the overflow */
+		}
+		
+		#progress-bar-container {
+			width: 100%;
+			height: 8px;
+			border-radius: 15px; /* Add this line to make the progress bar rounded */
+			overflow: hidden; /* Add this line to hide the overflow */
+		}
+		
+		#progress-bar {
+			height: 8px;
+			background-image: -webkit-linear-gradient(90deg, #a258ff, #43b6bd);
+			background-image: linear-gradient(90deg, #a258ff, #43b6bd);
+			width: 0%;
+			border-radius: 15px;
+			transition: width 0.3s ease-in-out; /* Add this line to add a smooth transition */
+		}
+		
+		.content {
+			height: 10000px;
+		}
+	</style>
 </head>
+
+<div id="progress-container">
+	<div id="progress-bar-container">
+		<div id="progress-bar"></div>
+	</div> 
+</div>
+
+<div class="content"></div>
 <body>
-    <header>
-        <h1>Manual do Bonsai</h1>
-        
-    </header>
+	<script>
+		window.onscroll = function() {myFunction()};
 
-    <button id="burger" class="open-main-nav">
-        <span class="burger"></span>
-        <span class="burger-text">Menu</span>
-    </button>
-    <nav class="main-nav" id="main-nav">
-        <ul>
-            <li>
-                <a href="#">About me</a>
-            </li>
-            <li>
-                <a href="#">Speaker &amp; Writer</a>
-            </li>
-            <li>
-                <a href="#">Work</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">Blog</a>
-            </li>
-        </ul>
-    </nav> 
-    <div class="slideshow-container">
-
-        <div class="mySlides fade">
-          <img src="imgs/winterIsComing.jpeg" style="width:100%">
-          <div class="text">Caption Text</div>
-        </div>
-        
-        <div class="mySlides fade">
-          
-          <img src="imgs/Logo-Plants.will.jpg" style="width:100%">
-          <div class="text">Caption Two</div>
-        </div>
-        
-        <div class="mySlides fade">
-          
-          <img src="imgs/natureza.jpg" style="width:100%">
-          <div class="text">Caption Three</div>
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-        
-        </div>
-    <hr>
-    <h2>Criadores Do Manual</h2>
-    
-    <div class="Criadores">
-        <img src="imgs/mestreManinho.jpeg" alt="">
-        <div class="texto">
-            <h3>Mestre Maninho</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea velit maxime repudiandae natus dolorum voluptates aliquid fugit nisi? Asperiores, eligendi nihil dolorem animi architecto modi eius saepe enim. Eveniet, dignissimos?</p>
-        </div>
-    </div>
-    <div class="aprendiz">
-        <img src="imgs/aprendizWill.jpeg" alt="">
-        <div class="textod">
-            <h3>Aprendiz Will</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea velit maxime repudiandae natus dolorum voluptates aliquid fugit nisi? Asperiores, eligendi nihil dolorem animi architecto modi eius saepe enim. Eveniet, dignissimos?</p>
-        </div>
-    </div>
-    <hr>
-    <h2>Principios do Bonsai</h2>
-    <!-- <div class="contentor">
-        <div class="div1">a</div>
-        <div class="div2">b</div>
-        <div class="div3">c</div>
-        <div class="div4">d</div>
-    </div> -->
-	<div class="slideshow-container">
-
-        <div class="mySlide fade">
-			<div class="contentor">
-				<div class="div1">a</div>
-				<div class="div2">b</div>
-				<div class="div3">c</div>
-				<div class="div4">d</div>
-			</div>
-          <div class="text">Caption Text</div>
-        </div>
-        
-        <div class="mySlide fade">
-          
-			<div class="contentor">
-				<div class="div1">a</div>
-				<div class="div2">b</div>
-				<div class="div3">c</div>
-				<div class="div4">d</div>
-			</div>
-          <div class="text">Caption Two</div>
-        </div>
-        
-        <div class="mySlide fade">
-          
-          <img src="imgs/natureza.jpg" style="width:100%">
-          <div class="text">Caption Three</div>
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-        
-        </div>
-    <hr>
-    <h2>Especies</h2>
-    <div class="contentor">
-        <div class="div1">a</div>
-        <div class="div2">b</div>
-        <div class="div3">c</div>
-        <div class="div4">d</div>
-    </div>
-    <footer>
-
-    </footer>
-
-    <script>
-        let burger = document.getElementById('burger'),
-            nav    = document.getElementById('main-nav');
-            body   = document.body; // Select the body element
-            
-    
-        burger.addEventListener('click', function(e){
-            this.classList.toggle('is-open');
-            nav.classList.toggle('is-open');
-            body.classList.toggle('no-scroll'); // Toggle the 'no-scroll' class
-        });
-
-        let slideIndexs = 1;
-        showSlide(slideIndexs);
-
-        function plusSlides(n) {
-        showSlide(slideIndexs += n);
-        }
-
-        function currentSlide(n) {
-        showSlide(slideIndexs = n);
-        }
-
-        function showSlide(n) {
-        let i;
-        let slide = document.getElementsByClassName("mySlide");
-
-        if (n > slide.length) {slideIndexs = 1}    
-        if (n < 1) {slideIndexs = slide.length}
-        for (i = 0; i < slide.length; i++) {
-            slide[i].style.display = "none";  
-        }
-        slide[slideIndexs-1].style.display = "block";  
-        }       
-    </script>
+		function myFunction() {
+			var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			var scrolled = (winScroll / height) * 100;
+			document.getElementById("progress-bar").style.width = scrolled + "%";
+		}		
+	</script>
 </body>
 </html>

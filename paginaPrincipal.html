@@ -8,6 +8,9 @@
     
 </head>
 <body>
+    <div id="progress">
+        <span id="progress-value">&#x1f815;</span>
+    </div>
     <header>
         <h1>Manual do Bonsai</h1>
         
@@ -122,14 +125,34 @@
         function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-
         if (n > slides.length) {slideIndex = 1}    
         if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";  
         }
         slides[slideIndex-1].style.display = "block";  
-        }       
+        }
+        let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            letprogressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;    
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = (pos / calcHeight) * 100;
+            if(pos>100){
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            scrollProgress.style.background = `conic-gradient( #43b6bd ${scrollValue}%, #f4f4f4 ${scrollValue}%)`;     
+        };
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
     </script>
 </body>
 </html>
